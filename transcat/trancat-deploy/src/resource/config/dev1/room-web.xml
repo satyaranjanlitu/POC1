@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file name is same as war file name and it will present inside tomcat conf/Catalina/localhost/ 
+     when tomcat will start it load this xml file and create datasources, validationQuery is the external properties file path -->
+<Context>
+   <WatchedResource>WEB-INF/web.xml</WatchedResource>
+   
+   <Resource name="jdbc/listedOptions_JIB"
+             auth="Container"
+             type="javax.sql.DataSource"
+			 factory = "com.satya.room.tomcat.DataSourceEncryptionFactory"
+             driverClassName = "DATABASE_DRIVER_CLASS_NAME_JIB"
+             url = "ENTITY_DATABASE_URL_JIB"
+             username = "DATABASE_USERNAME_JIB"
+             password="DATABASE_PASSWORD_JIB"
+             initialSize = "1"
+             minIdle = "1"
+             maxActive = "2"
+             maxIdle = "2"
+             maxWait = "300000"
+             testOnBorrow = "true"
+             testOnReturn = "false"
+             testWhileIdle = "false"
+             validationQuery = "E:\satya\apache-tomcat-7.0.64-windows-x86\apache-tomcat-7.0.64\app\dbProperties.properties"
+             
+             
+              />
+			  <!-- for dev1 it will be 
+			  
+			  validationQuery = "/app0/dev1/content/config/dbProperties.properties"-->
+			  
+			  
+			  <!-- 2nd set of datasource configuration -->
+			  
+			<Resource name="jdbc/listedOptions_GVA"
+             auth="Container"
+             type="javax.sql.DataSource"
+			 factory = "com.satya.room.tomcat.DataSourceEncryptionFactory"
+             driverClassName = "DATABASE_DRIVER_CLASS_NAME_GVA"
+             url = "ENTITY_DATABASE_URL_GVA"
+             username = "DATABASE_USERNAME_GVA"
+             password="DATABASE_PASSWORD_GVA"
+             initialSize = "1"
+             minIdle = "1"
+             maxActive = "2"
+             maxIdle = "2"
+             maxWait = "300000"
+             testOnBorrow = "true"
+             testOnReturn = "false"
+             testWhileIdle = "false"
+             validationQuery = "E:\satya\apache-tomcat-7.0.64-windows-x86\apache-tomcat-7.0.64\app\dbProperties.properties"
+             
+              />
+
+</Context>
+
+  
